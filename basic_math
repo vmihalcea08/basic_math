@@ -1,0 +1,54 @@
+#include <iostream>
+
+double readNumber()
+{
+    double number {};
+    std::cout << "enter a double value: ";
+    std::cin >> number;
+    return number;
+}
+
+char readSign()
+{
+    char sign {};
+    std::cout << "enter +, -, *, or /: ";
+    std::cin >> sign;
+    return sign;
+}
+
+void printResult(double first, double second)
+{
+    char sign { readSign() };
+    
+    switch (sign)
+    {
+    case '+':
+    std::cout << first << " " << sign << " " << second << " is " << first + second;
+    break;
+    
+    case '-':
+    std::cout << first << " " << sign << " " << second << " is " << first - second;
+    break;
+    
+    case '*':
+    std::cout << first << " " << sign << " " << second << " is " << first * second;
+    break;
+    
+    case '/':
+    std::cout << first << " " << sign << " " << second << " is " << first / second;
+    break;
+    
+    default:
+    break;
+    }
+}
+
+int main() 
+{
+    double first { readNumber() };
+    double second { readNumber() };
+    
+    printResult (first, second);
+    
+    return 0;
+}
